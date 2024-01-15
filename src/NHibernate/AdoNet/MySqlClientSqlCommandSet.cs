@@ -20,8 +20,8 @@ namespace NHibernate.AdoNet
 
 		static MySqlClientSqlCommandSet()
 		{
-			var sysData = Assembly.Load("MySql.Data");
-			adapterType = sysData.GetType("MySql.Data.MySqlClient.MySqlDataAdapter");
+			var sysData = Assembly.Load("MySqlConnector");
+			adapterType = sysData.GetType("MySqlConnector.MySqlClient.MySqlDataAdapter");
 			Debug.Assert(adapterType != null, "Could not find MySqlDataAdapter!");
 
 			doInitialise = DelegateHelper.BuildAction(adapterType, "InitializeBatching");
